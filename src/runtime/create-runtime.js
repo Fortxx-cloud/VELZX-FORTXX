@@ -44,15 +44,20 @@ export function createRuntime({
   }
 
   if (envPath !== null) {
-    if (typeof envPath !== 'string' || !fs.existsSync(envPath)) {
-      throw new Error('SOURCE_ENV_NOT_FOUND');
+    if (typeof envPath !== 'string') {
+      throw new Error('INVALID_SOURCE_ENV_PATH');
     }
 
-    if (typeof process.loadEnvFile !== 'function') {
-      throw new Error('NODE_ENV_LOADER_UNAVAILABLE');
-    }
+    // External provider env is optional on hosting.
+    // Existing environment variables remain the credential source
+    // when the external Laboratorium .env file is unavailable.
+    if (fs.existsSync(envPath)) {
+      if (typeof process.loadEnvFile !== 'function') {
+        throw new Error('NODE_ENV_LOADER_UNAVAILABLE');
+      }
 
-    process.loadEnvFile(envPath);
+      process.loadEnvFile(envPath);
+    }
   }
 
   const groupsConfig = readJson(
