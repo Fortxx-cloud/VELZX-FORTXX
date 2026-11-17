@@ -1,0 +1,26 @@
+{
+  "name": "velzx-ai-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "VELZX AI OpenAI-compatible API Gateway",
+  "scripts": {
+    "test:key-pool": "node scripts/test-key-pool.mjs",
+    "test:adapter": "node scripts/test-groq-adapter.mjs",
+    "test:router": "node scripts/test-model-router.mjs",
+    "test:runtime": "node scripts/test-runtime.mjs",
+    "test": "npm run test:key-pool && npm run test:adapter && npm run test:router && npm run test:runtime",
+    "test:auth": "node scripts/test-api-key-service.mjs",
+    "test:auth:neon": "node scripts/test-api-key-neon.mjs",
+    "start": "node src/index.js",
+    "test:http": "node scripts/test-http-server.mjs",
+    "test:settings": "node scripts/test-settings.mjs",
+    "test:database-pool": "node scripts/test-database-pool.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "pg": "^8.23.1"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "strategy": "random-once",
+  "totalKeys": 35,
+  "groups": {
+    "A": [
+      "GROQ_API_KEY4",
+      "GROQ_API_KEY31",
+      "GROQ_API_KEY32",
+      "GROQ_API_KEY13",
+      "GROQ_API_KEY6",
+      "GROQ_API_KEY8",
+      "GROQ_API_KEY23",
+      "GROQ_API_KEY21",
+      "GROQ_API_KEY24",
+      "GROQ_API_KEY18",
+      "GROQ_API_KEY16",
+      "GROQ_API_KEY1"
+    ],
+    "B": [
+      "GROQ_API_KEY2",
+      "GROQ_API_KEY3",
+      "GROQ_API_KEY14",
+      "GROQ_API_KEY15",
+      "GROQ_API_KEY12",
+      "GROQ_API_KEY34",
+      "GROQ_API_KEY10",
+      "GROQ_API_KEY17",
+      "GROQ_API_KEY29",
+      "GROQ_API_KEY27",
+      "GROQ_API_KEY11",
+      "GROQ_API_KEY19"
+    ],
+    "C": [
+      "GROQ_API_KEY7",
+      "GROQ_API_KEY26",
+      "GROQ_API_KEY35",
+      "GROQ_API_KEY20",
+      "GROQ_API_KEY9",
+      "GROQ_API_KEY28",
+      "GROQ_API_KEY30",
+      "GROQ_API_KEY25",
+      "GROQ_API_KEY33",
+      "GROQ_API_KEY22",
+      "GROQ_API_KEY5"
+    ]
+  }
+}

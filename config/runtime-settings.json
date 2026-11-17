@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "provider": {
+    "timeoutMs": 30000
+  },
+  "keyPool": {
+    "defaultCooldownMs": 30000
+  },
+  "router": {
+    "credentialCooldownMs": 300000,
+    "rateLimitCooldownMs": 30000,
+    "maxAttempts": 3
+  },
+  "http": {
+    "maxBodyBytes": 1048576
+  },
+  "database": {
+    "maxConnections": 5,
+    "idleTimeoutMs": 30000,
+    "connectionTimeoutMs": 20000
+  }
+}

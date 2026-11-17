@@ -1,0 +1,43 @@
+
+{
+  "version": 1,
+  "provider": "groq",
+  "models": {
+    "velzx-fortxx-pro": {
+      "group": "A",
+      "upstream": "openai/gpt-oss-120b"
+    },
+    "velzx-fortxx-speed": {
+      "group": "A",
+      "upstream": "openai/gpt-oss-20b"
+    },
+    "velzx-fortxx-nova": {
+      "group": "A",
+      "upstream": "qwen/qwen3.8-27b"
+    },
+    "velzx-fortxx-titan": {
+      "group": "B",
+      "upstream": "openai/gpt-oss-120b"
+    },
+    "velzx-fortxx-flash": {
+      "group": "B",
+      "upstream": "openai/gpt-oss-20b"
+    },
+    "velzx-fortxx-orbit": {
+      "group": "B",
+      "upstream": "qwen/qwen3.8-27b"
+    },
+    "velzx-fortxx-elite": {
+      "group": "C",
+      "upstream": "openai/gpt-oss-120b"
+    },
+    "velzx-fortxx-rapid": {
+      "group": "C",
+      "upstream": "openai/gpt-oss-20b"
+    },
+    "velzx-fortxx-zenith": {
+      "group": "C",
+      "upstream": "qwen/qwen3.8-27b"
+    }
+  }
+}
