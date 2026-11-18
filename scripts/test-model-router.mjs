@@ -296,3 +296,46 @@ console.log('MODEL ROUTER TEST: ALL PASSED');
 
   console.log('Maximum attempts override: PASS');
 }
+
+// Model identity injection and message preservation.
+{
+  for (const [alias, definition] of Object.entries(models.models)) {
+    const originalMessages = [
+      { role: 'system', content: 'Application instruction.' },
+      { role: 'user', content: 'Who are you?' }
+    ];
+
+    const snapshot = structuredClone(originalMessages);
+    let captured;
+
+    const router = setup({
+      async chat(args) {
+        captured = args;
+        return { ok: true };
+      }
+    });
+
+    await router.chat({
+      model: alias,
+      messages: originalMessages
+    });
+
+    assert.equal(captured.messages.length, 3);
+    assert.deepEqual(captured.messages[0], snapshot[0]);
+    assert.equal(captured.messages[1].role, 'system');
+    assert.equal(
+      captured.messages[1].content.includes(definition.identity.name),
+      true
+    );
+    assert.equal(
+      captured.messages[1].content.includes(definition.identity.title),
+      true
+    );
+    assert.deepEqual(captured.messages[2], snapshot[1]);
+    assert.deepEqual(originalMessages, snapshot);
+
+    console.log(`${alias} identity injection: PASS`);
+  }
+
+  console.log('MODEL IDENTITY TEST: ALL PASSED');
+}
